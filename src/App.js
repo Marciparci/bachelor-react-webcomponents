@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Form from './Form';
+import WelcomeClass from './WelcomeClass';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      variable2: 3
+    };
+  }
+
+  handleSubmit(event) {
+    console.log(event);
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <WelcomeClass></WelcomeClass>
+        <Form></Form>
+        <angular-hello></angular-hello>
+        <angular-form></angular-form>
+      </div>
+    );
+  }
 }
-
-export default App;
+export default App
