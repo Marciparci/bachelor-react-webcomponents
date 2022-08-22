@@ -11,13 +11,12 @@ class Form extends React.Component {
         this.state = {
             text: "Formular React",
             number: 56,
-            date: '22-08-2022'
+            date: '2022-08-22'
         };
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log("hallo aus react-element");
         const framework = "react"
         WebComponentService(framework);
     }
