@@ -1,14 +1,28 @@
 import React, { Component } from 'react'
 import Form from './Form';
 import WelcomeClass from './WelcomeClass';
+import DataService from './DataService.js';
+
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.loadData = DataService;
+  }
 
-    this.state = {
-      variable2: 3
-    };
+  componentDidMount = async () => {
+
+    const getData = await this.loadData();
+
+    // Zuweisen der JSON Werte zu Formular Feldern der Web Component
+    var aText = document.getElementById("Atext");
+    aText.value = getData.text;
+
+    var aNumber = document.getElementById("Anumber");
+    aNumber.value = getData.number;
+
+    var aDate = document.getElementById("Adate");
+    aDate.value = getData.date;
   }
 
   handleSubmit() {

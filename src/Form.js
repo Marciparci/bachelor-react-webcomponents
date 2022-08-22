@@ -1,12 +1,17 @@
 // import Komponenten + React für Klassenkomponenten
 // npm start
 import React from 'react';
-import DataService from './DataService.js';
 
 // Custom Form Klassen Komponente
 class Form extends React.Component {
     constructor(propTypes) {
         super(propTypes);
+
+        this.state = {
+            text: "Formular React",
+            number: 56,
+            date: "22.08.2022",
+        };
     }
 
     handleSubmit(event) {
@@ -23,7 +28,7 @@ class Form extends React.Component {
                         type={"text"}
                         name="text"
                         className='formInput'
-                        defaultValue={this.textvalue}
+                        defaultValue={this.state.text}
                         id="text"
                     >
                     </input>
@@ -35,6 +40,7 @@ class Form extends React.Component {
                         name="number"
                         className='formInput'
                         id='number'
+                        defaultValue={this.state.number}
                     >
                     </input>
                 </div>
@@ -45,6 +51,7 @@ class Form extends React.Component {
                         name="date"
                         className='formInput'
                         id='date'
+                        defaultValue={this.state.date}
                     >
                     </input>
                 </div>
