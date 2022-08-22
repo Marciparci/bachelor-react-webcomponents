@@ -11,8 +11,8 @@ class App extends Component {
     };
   }
 
-  handleSubmit(event) {
-    console.log(event);
+  handleSubmit() {
+    console.log("Test");
   }
 
   render() {

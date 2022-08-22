@@ -4,7 +4,7 @@ import React from 'react'
 class WelcomeClass extends React.Component {
     render() {
       return (
-        <h1 className="Ureact"> <u>React Formular als Web Component</u></h1>
+        <h1 className="Ureact"> <u>React Formular</u></h1>
       )
     }
   }
