@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Form from './Form';
 import WelcomeClass from './WelcomeClass';
 import DataService from './DataService.js';
-
+import WebComponentService from './WebComponentService';
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +26,8 @@ class App extends Component {
   }
 
   handleSubmit() {
-    console.log("Test");
+    const framework = "angular";
+    WebComponentService(framework);
   }
 
   render() {
@@ -35,7 +36,7 @@ class App extends Component {
         <WelcomeClass></WelcomeClass>
         <Form></Form>
         <angular-hello></angular-hello>
-        <angular-form></angular-form>
+        <angular-form onSubmit={this.handleSubmit}></angular-form>
       </div>
     );
   }

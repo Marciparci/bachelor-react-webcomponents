@@ -1,6 +1,7 @@
 // import Komponenten + React für Klassenkomponenten
 // npm start
 import React from 'react';
+import WebComponentService from './WebComponentService';
 
 // Custom Form Klassen Komponente
 class Form extends React.Component {
@@ -10,13 +11,15 @@ class Form extends React.Component {
         this.state = {
             text: "Formular React",
             number: 56,
-            date: "22.08.2022",
+            date: '22-08-2022'
         };
     }
 
     handleSubmit(event) {
         event.preventDefault();
         console.log("hallo aus react-element");
+        const framework = "react"
+        WebComponentService(framework);
     }
 
     render() {
