@@ -1,5 +1,5 @@
 // import Komponenten + React für Klassenkomponenten
-// npm start
+// npm start zum Starten der Anwendung
 import React from 'react';
 import WebComponentService from './WebComponentService';
 
@@ -8,6 +8,7 @@ class Form extends React.Component {
     constructor(propTypes) {
         super(propTypes);
 
+        // Anfangswerte des React Formulars definieren
         this.state = {
             text: "Formular React",
             number: 56,
@@ -15,14 +16,18 @@ class Form extends React.Component {
         };
     }
 
+    // Funktion löst aus wenn das Formular abgeschickt wird
     handleSubmit(event) {
+        // verhindert Neuladen der Seite
         event.preventDefault();
+        // Aufrufen des Services mit Parameter des React Formulars
         const framework = "react"
         WebComponentService(framework);
     }
 
     render() {
         return (
+            // HTML Aufbau des React Formulars
             <form onSubmit={this.handleSubmit}>
                 <div className='formDiv'>
                     <label htmlFor="text">Text</label>
